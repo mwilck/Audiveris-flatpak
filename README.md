@@ -12,6 +12,18 @@ it's called `.flatpak-builder/build/audivers-1`. Copy this directory.
 
     cp -rl .flatpak-builder/build/audivers-1 temp
 
+## Select languages
+
+Audiveris requires Tesseract "trained data" for different languages to
+decode human language. A helper script is provided to select languages.
+
+	bash languages.sh
+
+The script will print a list of available languages. Enter a number to
+download the language file (caution, these files are big), verify it,
+and generate YAML input from it. Just hit ENTER to quit. Type `?` to
+see the language list again.
+
 ## Run gradle and create dependencies
 
 Note: you must be online to run this step. It's only necessary if the
@@ -33,3 +45,18 @@ all dependencies. After a while, you shoud see something like this:
 	BUILD SUCCESSFUL in 51s
 	12 actionable tasks: 12 executed
 
+## Run deps.py
+
+Now run
+
+    python3 deps.py
+
+This command copies the downloaded dependecies into the `deps/` subdirectory,
+and generates the buildscript `mkgradlerepo.sh` and the list of sources
+for the flatpak source file `org.flatpak.Audivers.yml`.
+
+## Build Audiveris
+
+Now run the main build:
+
+    flatpak-builder --force-clean build org.flatpak.Audiveris.yml
