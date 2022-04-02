@@ -1,0 +1,72 @@
+# Copied from
+# https://stackoverflow.com/questions/28436473/build-gradle-repository-for-offline-development
+
+import os
+import glob
+import shutil
+import subprocess
+
+def main():
+    with open("org.flatpak.Audiveris.yml.in", "r") as input:
+        yml = input.read().rstrip()
+    with open("lang_sources.yml", "r") as input:
+        langs = input.read().rstrip()
+    commands = ""
+    sources = ""
+    project_dir = os.getcwd()
+    flat_dir = os.path.join(project_dir, "deps")
+    if not os.path.isdir(flat_dir):
+        os.makedirs(flat_dir)
+    repo_dir = os.path.join(project_dir, "dependencies")
+    if not os.path.isdir(repo_dir):
+        os.makedirs(repo_dir)
+    temp_home = os.path.join(project_dir, "temp/.gradle")
+    if not os.path.isdir(temp_home):
+        os.makedirs(temp_home)
+    cache_files = os.path.join(temp_home, "caches/modules-*/files-*")
+    for cache_dir in glob.glob(cache_files):
+        for cache_group_id in os.listdir(cache_dir):
+            cache_group_dir = os.path.join(cache_dir, cache_group_id)
+            repo_group_dir = os.path.join(repo_dir, cache_group_id.replace('.', '/'))
+            for cache_artifact_id in os.listdir(cache_group_dir):
+                cache_artifact_dir = os.path.join(cache_group_dir, cache_artifact_id)
+                repo_artifact_dir = os.path.join(repo_group_dir, cache_artifact_id)
+                for cache_version_id in os.listdir(cache_artifact_dir):
+                    cache_version_dir = os.path.join(cache_artifact_dir, cache_version_id)
+                    repo_version_dir = os.path.join(repo_artifact_dir, cache_version_id)
+                    if not os.path.isdir(repo_version_dir):
+                        os.makedirs(repo_version_dir)
+                    cache_items = os.path.join(cache_version_dir, "*/*")
+                    for cache_item in glob.glob(cache_items):
+                        cache_item_name = os.path.basename(cache_item)
+                        sha1 = os.path.basename(os.path.dirname(cache_item))
+                        sha1 = "0" * (40 - len(sha1)) + sha1
+                        repo_item_path = os.path.join(repo_version_dir, cache_item_name)
+                        repo_item_rel = repo_item_path.replace(project_dir + os.path.sep, "")
+                        flat_item_path = os.path.join(flat_dir, cache_item_name)
+                        cache_item_rel = cache_item.replace(temp_home + os.path.sep, "")
+                        commands = commands + f"""\
+mkdir -p {os.path.dirname(repo_item_rel)}
+ln -f {cache_item_name} {repo_item_rel}
+"""
+                        sources = sources + f"""
+      - type: file
+        path: deps/{cache_item_name}
+        sha1: {sha1}"""
+                        if os.path.exists(flat_item_path):
+                            raise RuntimeError(f"duplicate file name {repo_item_path}")
+                        os.link(repo_item_path, flat_item_path)
+    #shutil.rmtree(temp_home)
+    with open("org.flatpak.Audiveris.yml", "w") as out:
+        out.write(f"""
+{yml}
+{langs}{sources}
+""")
+    with open("mkgradlerepo.sh", "w") as out:
+        out.write(f"""\
+#! /bin/bash
+{commands}
+""")
+
+if __name__ == "__main__":
+    main()
