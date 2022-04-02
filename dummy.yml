@@ -1,0 +1,24 @@
+app-id: org.flatpak.Audiveris
+runtime: org.freedesktop.Platform
+runtime-version: '21.08'
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.openjdk11
+build-options:
+  append-path: "/usr/lib/sdk/openjdk11/bin"
+command: audiveris.jar
+modules:
+  - name: audivers
+    buildsystem: simple
+    build-commands:
+      - ln -f gradle-5.6.4-bin.zip gradle/wrapper/gradle-5.6.4-bin.zip
+      - sed -Ei 's,https\\://services.gradle.org/distributions/,,' gradle/wrapper/gradle-wrapper.properties
+      - sh ./mkgradlerepo.sh
+      - ./gradlew --debug --offline jar
+    sources:
+      - type: file
+        url: https://services.gradle.org/distributions/gradle-5.6.4-bin.zip
+        sha256: 1f3067073041bc44554d0efe5d402a33bc3d3c93cc39ab684f308586d732a80d
+      - type: git
+        url: https://github.com/Audiveris/audiveris
+        branch: master
