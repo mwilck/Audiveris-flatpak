@@ -13,8 +13,8 @@ modules:
     build-commands:
       - ln -f gradle-5.6.4-bin.zip gradle/wrapper/gradle-5.6.4-bin.zip
       - sed -Ei 's,https\\://services.gradle.org/distributions/,,' gradle/wrapper/gradle-wrapper.properties
-      - echo -e '#!/bin/bash\necho "Next step is running gradle, see README.md"' >dummy.sh
-      - sh dummy.sh
+      - echo -e '#!/bin/bash\necho "=== Next step is running gradle, see README.md ==="' >dummy.sh
+      - install -D dummy.sh /app/bin/dummy.sh
     sources:
       - type: file
         url: https://services.gradle.org/distributions/gradle-5.6.4-bin.zip
