@@ -11,14 +11,14 @@ modules:
   - name: dummy
     buildsystem: simple
     build-commands:
-      - ln -f gradle-5.6.4-bin.zip gradle/wrapper/gradle-5.6.4-bin.zip
+      - ln -f gradle-7.3-all.zip gradle/wrapper/gradle-7.3-all.zip
       - sed -Ei 's,https\\://services.gradle.org/distributions/,,' gradle/wrapper/gradle-wrapper.properties
       - echo -e '#!/bin/bash\necho "=== Next step is running gradle, see README.md ==="' >dummy.sh
       - install -D dummy.sh /app/bin/dummy.sh
     sources:
       - type: file
-        url: https://services.gradle.org/distributions/gradle-5.6.4-bin.zip
-        sha256: 1f3067073041bc44554d0efe5d402a33bc3d3c93cc39ab684f308586d732a80d
+        url: https://services.gradle.org/distributions/gradle-7.3-all.zip
+        sha256: 00b273629df4ce46e68df232161d5a7c4e495b9a029ce6e0420f071e21316867
       - type: git
         url: https://github.com/Audiveris/audiveris
         tag: 5.2.5
