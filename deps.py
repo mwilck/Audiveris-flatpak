@@ -27,7 +27,7 @@ def main(subdir):
 
     os.chdir(build_dir)
     # Fixme: do we need to call the "build" task, really?
-    subprocess.call(["./gradlew", "-g", temp_home, "build"])
+    subprocess.call(["./gradlew", "--info", "-g", temp_home, "build"])
     os.chdir(project_dir)
 
     cache_files = os.path.join(temp_home, "caches", "modules-*", "files-*")
