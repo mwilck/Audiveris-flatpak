@@ -1,67 +1,45 @@
-From b739dd6bcc92e6aeff1d8c1e12a2bda7479eff1d Mon Sep 17 00:00:00 2001
-From: Martin Wilck <martin_wilck@gmx.de>
-Date: Sun, 27 Mar 2022 23:14:14 +0200
-Subject: [PATCH] add local dependencies mirror
+commit 36edb484acfe1d5dee59d017f8f05d4413b1b21f
+Author: Martin Wilck <martin_wilck@gmx.de>
+Date:   Sun Apr 3 22:38:28 2022 +0200
 
----
- build.gradle         | 11 +++++++----
- schemas/build.gradle | 13 ++++++++-----
- 2 files changed, 15 insertions(+), 9 deletions(-)
+    audiveris 5.2.5: patch for offline building
 
 diff --git a/build.gradle b/build.gradle
-index 7dca6b8..1946a50 100644
+index 075f494cf..34d4f6e2d 100644
 --- a/build.gradle
 +++ b/build.gradle
-@@ -64,12 +64,15 @@ run {
- }
+@@ -62,8 +62,7 @@ run {
  
  repositories {
--    jcenter()
      maven {
 -        name = 'JBoss repository' // required to obtain non-free JAI
 -        url = 'https://repository.jboss.org/nexus/content/repositories/thirdparty-releases'
 +        url 'dependencies'
      }
--    mavenLocal()
-+    jcenter()
-+    // maven {
-+       // name = 'JBoss repository' // required to obtain non-free JAI
-+        // url = 'https://repository.jboss.org/nexus/content/repositories/thirdparty-releases'
-+    // }
-+    // mavenLocal()
-     //flatDir(dirs: 'dev/externals') // for libraries not in any other repository
- }
- 
+     mavenLocal()
+     mavenCentral()
 diff --git a/schemas/build.gradle b/schemas/build.gradle
-index 3abd0dd..4f40263 100644
+index a4fb63aa8..c3c116da1 100644
 --- a/schemas/build.gradle
 +++ b/schemas/build.gradle
-@@ -48,11 +48,14 @@
+@@ -48,11 +48,10 @@
  apply plugin: 'java'
  
  repositories { 
--  jcenter() 
--    maven {
+-    mavenCentral() 
+     maven {
 -        name = 'mvnrepository' 
 -        url = 'https://mvnrepository.com/artifact/net.sf.saxon/Saxon-HE'
-+     maven {
 +        url '../dependencies'
      }
-+ jcenter() 
-+  //  maven {
-+  //      name = 'mvnrepository' 
-+  //      url = 'https://mvnrepository.com/artifact/net.sf.saxon/Saxon-HE'
-+  //  }
++    mavenCentral() 
  }
  
  dependencies { 
-@@ -316,4 +319,4 @@ task checkXsltProc {
+@@ -316,4 +315,4 @@ task checkXsltProc {
          
          ///genHtmls.dependsOn("newGenHtml$cls")    
      }
 -}
 \ No newline at end of file
 +}
--- 
-2.34.1
-
