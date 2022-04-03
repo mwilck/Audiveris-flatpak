@@ -79,7 +79,7 @@ ln -f {cache_item_name} {repo_item_rel}
 {commands}
 """)
 
-    if os.islink(build_dir):
+    if os.path.islink(build_dir):
         shutil.rmtree(os.path.realpath(build_dir))
         os.unlink(build_dir)
     else:
