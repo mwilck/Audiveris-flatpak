@@ -44,8 +44,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Audiveris/audiveris
-        tag: 5.2.5
-        commit: 8f78b896cf028446f64d8b9028e457f56311b18e
+        branch: master
       - type: file
         url: https://services.gradle.org/distributions/gradle-5.6.4-bin.zip
         sha256: 1f3067073041bc44554d0efe5d402a33bc3d3c93cc39ab684f308586d732a80d
