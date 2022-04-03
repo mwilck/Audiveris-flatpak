@@ -66,6 +66,6 @@ copies the downloaded dependecies into the `deps/` subdirectory,
 and generates the buildscript `mkgradlerepo.sh` and the list of sources
 for the flatpak source file `io.github.Audivervis.audiveris.yml`.
 
-**Important:** Building **audiveris** until 5.2.4 (current `master` branch)
-requires **JDK 11**. Make sure that not only the paths to `java` and `javac`,
-but also the environment variables `JAVA_HOME` etc. point to the correct SDK.
+**Important:** Building **audiveris** 5.2.5 and newer requires **JDK 17**.
+Make sure that not only the paths to `java` and `javac`, but also the
+environment variables `JAVA_HOME` etc. point to the correct SDK.
