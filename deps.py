@@ -1,29 +1,36 @@
-# Copied from
+#! /usr/bin/python3
+# Inspired by
 # https://stackoverflow.com/questions/28436473/build-gradle-repository-for-offline-development
 
 import os
 import glob
 import shutil
 import subprocess
+import sys
 
-def main():
-    with open("org.flatpak.Audiveris.yml.in", "r") as input:
-        yml = input.read().rstrip()
-    with open("lang_sources.yml", "r") as input:
-        langs = input.read().rstrip()
+APP_ID = "io.github.Audiveris.audiveris"
+
+def main(subdir):
     commands = ""
     sources = ""
-    project_dir = os.getcwd()
+    project_dir = os.path.dirname(os.path.realpath(__file__))
     flat_dir = os.path.join(project_dir, "deps")
     if not os.path.isdir(flat_dir):
         os.makedirs(flat_dir)
     repo_dir = os.path.join(project_dir, "dependencies")
     if not os.path.isdir(repo_dir):
         os.makedirs(repo_dir)
-    temp_home = os.path.join(project_dir, "temp/.gradle")
-    if not os.path.isdir(temp_home):
-        os.makedirs(temp_home)
-    cache_files = os.path.join(temp_home, "caches/modules-*/files-*")
+    build_dir = os.path.join(project_dir, subdir)
+    temp_home = os.path.join(build_dir, ".gradle_temp")
+    if not os.path.isdir(build_dir):
+        raise RuntimeError(f"{build_dir} does not exist")
+
+    os.chdir(build_dir)
+    # Fixme: do we need to call the "build" task, really?
+    subprocess.call(["./gradlew", "-g", temp_home, "build"])
+    os.chdir(project_dir)
+
+    cache_files = os.path.join(temp_home, "caches", "modules-*", "files-*")
     for cache_dir in glob.glob(cache_files):
         for cache_group_id in os.listdir(cache_dir):
             cache_group_dir = os.path.join(cache_dir, cache_group_id)
@@ -55,10 +62,14 @@ ln -f {cache_item_name} {repo_item_rel}
         sha1: {sha1}"""
                         if os.path.exists(flat_item_path):
                             raise RuntimeError(f"duplicate file name {repo_item_path}")
-                        os.link(repo_item_path, flat_item_path)
-    #shutil.rmtree(temp_home)
-    with open("org.flatpak.Audiveris.yml", "w") as out:
-        out.write(f"""
+                        os.link(cache_item, flat_item_path)
+
+    with open(APP_ID + ".yml.in", "r") as input:
+        yml = input.read().rstrip()
+    with open("lang_sources.yml", "r") as input:
+        langs = input.read().rstrip()
+    with open(APP_ID + ".yml", "w") as output:
+        output.write(f"""
 {yml}
 {langs}{sources}
 """)
@@ -68,5 +79,17 @@ ln -f {cache_item_name} {repo_item_rel}
 {commands}
 """)
 
+    if os.islink(build_dir):
+        shutil.rmtree(os.path.realpath(build_dir))
+        os.unlink(build_dir)
+    else:
+        shutil.rmtree(build_dir)
+
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 2:
+        raise RuntimeError("This script takes max 1 argument")
+    elif len(sys.argv) == 2:
+        dir=sys.argv[1]
+    else:
+        dir=".flatpak-builder/build/dummy"
+    main(dir)
