@@ -61,7 +61,7 @@ ln -f {cache_item_name} {repo_item_rel}
         path: deps/{cache_item_name}
         sha1: {sha1}"""
                         if os.path.exists(flat_item_path):
-                            raise RuntimeError(f"duplicate file name {repo_item_path}")
+                            raise RuntimeError(f"duplicate file name {flat_item_path}")
                         os.link(cache_item, flat_item_path)
 
     with open(APP_ID + ".yml.in", "r") as input:
