@@ -2,7 +2,7 @@
 
 Run the build:
 
-    flatpak-builder --force-clean build io.github.Audiveris.audiveris.yml
+    flatpak-builder --force-clean build org.audiveris.audiveris.yml
 
 See [Building your first Flatpak](https://docs.flatpak.org/en/latest/first-build.html)
 for additional options to the **flatpak-builder** command.

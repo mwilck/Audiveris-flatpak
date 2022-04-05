@@ -8,7 +8,7 @@ import shutil
 import subprocess
 import sys
 
-APP_ID = "io.github.Audiveris.audiveris"
+APP_ID = "org.audiveris.audiveris"
 
 def main(subdir):
     commands = ""

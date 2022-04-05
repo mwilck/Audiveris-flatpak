@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>io.github.Audiveris.audiveris</id>
+  <id>org.audiveris.audiveris</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>AGPL-3.0</project_license>
   <name>Audiveris</name>
@@ -43,7 +43,7 @@
       <caption>Audiveris 5.2 editor with scanned sheet music, larger view</caption>
     </screenshot>
   </screenshots>
-  <launchable type="desktop-id">io.github.Audiveris.audiveris.desktop</launchable>
+  <launchable type="desktop-id">org.audiveris.audiveris.desktop</launchable>
   <developer_name>Hervé Bitteur et al.</developer_name>
   <releases>
     <release version="5.2.5" date="2022-01-18" urgency="medium" type="stable">
