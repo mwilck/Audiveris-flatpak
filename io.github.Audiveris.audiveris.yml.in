@@ -1,4 +1,4 @@
-app-id: io.github.Audiveris.Audiveris
+app-id: io.github.Audiveris.audiveris
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
@@ -36,8 +36,8 @@ modules:
       - install -m 0644 -D res/icon-256.png /app/share/icons/hicolor/256x256/apps/io.github.Audiveris.audiveris.png
       - install -m 0644 -D res/icon-64.png /app/share/icons/hicolor/64x64/apps/io.github.Audiveris.audiveris.png
       - install -m 0644 -D res/icon-50.png /app/share/icons/hicolor/50x50/apps/io.github.Audiveris.audiveris.png
-      - install -m 0644 -D -m 644 io.github.Audiveris.Audiveris.desktop /app/share/applications/io.github.Audiveris.audiveris.desktop
-      - install -m 0644 -D -m 644 io.github.Audiveris.Audiveris.metainfo.xml /app/share/metainfo/io.github.Audiveris.audiveris.metainfo.xml
+      - install -m 0644 -D -m 644 io.github.Audiveris.audiveris.desktop /app/share/applications/io.github.Audiveris.audiveris.desktop
+      - install -m 0644 -D -m 644 io.github.Audiveris.audiveris.metainfo.xml /app/share/metainfo/io.github.Audiveris.audiveris.metainfo.xml
       - ./gradlew --offline build
       - tar x -C /app --strip-components=1 -f build/distributions/Audiveris-*.tar
       - sed -i -f add-tessdata-prefix.sed /app/bin/Audiveris
@@ -51,9 +51,9 @@ modules:
       - type: patch
         path: 0001-add-local-dependencies-mirror.patch
       - type: file
-        path: io.github.Audiveris.Audiveris.desktop
+        path: io.github.Audiveris.audiveris.desktop
       - type: file
-        path: io.github.Audiveris.Audiveris.metainfo.xml
+        path: io.github.Audiveris.audiveris.metainfo.xml
       - type: file
         path: add-tessdata-prefix.sed
       - type: file
