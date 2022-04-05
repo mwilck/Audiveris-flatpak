@@ -46,24 +46,21 @@
   <launchable type="desktop-id">org.audiveris.audiveris.desktop</launchable>
   <developer_name>Hervé Bitteur et al.</developer_name>
   <releases>
-    <release version="5.2.5" date="2022-01-18" urgency="medium" type="stable">
+    <release version="5.2.4" date="2021-09-15" urgency="medium" type="stable">
       <description>
 	<p>
-	  This is a bug fix release:
-	  <ol>
+	  Time slot alignment
+	  <ul>
 	    <li>
-	      Fixed incompatibility between dummy-rests created on-the-fly at
-	      export time and potential related beams
+	      Better handling of vertical alignment within a time slot
 	    </li>
 	    <li>
-	      Fixed user prompt on staff selection, not applicable to brace drop
-	      or assignment
+	      Several minor bug fixes
 	    </li>
-	  </ol>
+	  </ul>
 	</p>
       </description>
     </release>
-    <release version="5.2.4" date="2021-09-15" urgency="medium" type="stable"/>
     <release version="5.2.3" date="2021-08-05" urgency="medium" type="stable"/>
     <release version="5.2.2" date="2021-07-09" urgency="medium" type="stable"/>
     <release version="5.2.1" date="2021-06-04" urgency="medium" type="stable"/>
