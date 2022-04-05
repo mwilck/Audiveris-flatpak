@@ -46,6 +46,26 @@
   <launchable type="desktop-id">org.audiveris.audiveris.desktop</launchable>
   <developer_name>Hervé Bitteur et al.</developer_name>
   <releases>
+    <release version="5.2.5" date="2022-01-18" urgency="medium" type="stable">
+      <description>
+	<p>
+	  Dummy rests vs interleaved rests
+	</p>
+	<p>
+	  This is a bug fix release:
+	  <ol>
+	    <li>
+	      Fixed incompatibility between dummy-rests created on-the-fly at
+	      export time and potential related beams
+	    </li>
+	    <li>
+	      Fixed user prompt on staff selection, not applicable to brace drop
+	      or assignment
+	    </li>
+	  </ol>
+	</p>
+      </description>
+    </release>
     <release version="5.2.4" date="2021-09-15" urgency="medium" type="stable">
       <description>
 	<p>
