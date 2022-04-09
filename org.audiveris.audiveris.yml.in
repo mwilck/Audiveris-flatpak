@@ -50,6 +50,8 @@ modules:
         sha256: 1f3067073041bc44554d0efe5d402a33bc3d3c93cc39ab684f308586d732a80d
       - type: patch
         path: 0001-add-local-dependencies-mirror.patch
+      - type: patch
+        path: 0001-WebBrowser-try-xdg-open-if-desktop.browse-fails.patch
       - type: file
         path: org.audiveris.audiveris.desktop
       - type: file
