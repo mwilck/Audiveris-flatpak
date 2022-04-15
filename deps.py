@@ -7,12 +7,64 @@ import glob
 import shutil
 import subprocess
 import sys
+from functools import total_ordering
 
 APP_ID = "org.audiveris.audiveris"
 
+@total_ordering
+class Artifact:
+    MAVEN_CENTRAL = "https://repo1.maven.org/maven2"
+    JBOSS_3RDPARTY = "https://repository.jboss.org/nexus/content/repositories/thirdparty-releases"
+    jboss_items = ("jai-core", "jai-codec")
+
+    def __init__(self, group_id, artifact_id, version_id, item_name, sha1):
+        self.group_id = group_id.replace(".", "/")
+        self.artifact_id = artifact_id
+        self.version_id = version_id
+        self.item_name = item_name
+        self.sha1 = "0" * (40 - len(sha1)) + sha1
+
+
+    def dir(self):
+        return "/".join([self.group_id, self.artifact_id, self.version_id])
+
+    def path(self):
+        return "/".join([self.dir(), self.item_name])
+
+    def url(self):
+        if self.artifact_id in self.jboss_items:
+            host = self.JBOSS_3RDPARTY
+        else:
+            host = self.MAVEN_CENTRAL
+        return "/".join([host, self.path()])
+
+    def yml(self, indent=6):
+        spc = indent * " "
+        return f"""\
+{spc}- type: file
+{spc}  url: {self.url()}
+{spc}  sha1: {self.sha1}
+"""
+
+    def script(self, dest="dependencies"):
+        dir = "/".join([dest, self.dir()])
+        return f"""\
+mkdir -p {dir}
+ln -f {self.item_name} {"/".join([dir, self.item_name])}
+"""
+
+    def __eq__(self, other):
+        return (self.path(), self.sha1) == (other.path(), other.sha1)
+
+    def __ne__(self, other):
+        return not (self == other)
+
+    def __lt__(self, other):
+        return (self.path(), self.sha1) < (other.path(), other.sha1)
+
+
 def main(subdir):
-    commands = ""
-    sources = ""
+    artifacts = []
     project_dir = os.path.dirname(os.path.realpath(__file__))
     flat_dir = os.path.join(project_dir, "deps")
     if not os.path.isdir(flat_dir):
@@ -46,23 +98,11 @@ def main(subdir):
                     cache_items = os.path.join(cache_version_dir, "*/*")
                     for cache_item in glob.glob(cache_items):
                         cache_item_name = os.path.basename(cache_item)
-                        sha1 = os.path.basename(os.path.dirname(cache_item))
-                        sha1 = "0" * (40 - len(sha1)) + sha1
-                        repo_item_path = os.path.join(repo_version_dir, cache_item_name)
-                        repo_item_rel = repo_item_path.replace(project_dir + os.path.sep, "")
-                        flat_item_path = os.path.join(flat_dir, cache_item_name)
-                        cache_item_rel = cache_item.replace(temp_home + os.path.sep, "")
-                        commands = commands + f"""\
-mkdir -p {os.path.dirname(repo_item_rel)}
-ln -f {cache_item_name} {repo_item_rel}
-"""
-                        sources = sources + f"""
-      - type: file
-        path: deps/{cache_item_name}
-        sha1: {sha1}"""
-                        if os.path.exists(flat_item_path):
-                            raise RuntimeError(f"duplicate file name {flat_item_path}")
-                        os.link(cache_item, flat_item_path)
+                        artifacts.append(Artifact(cache_group_id, cache_artifact_id,
+                                                  cache_version_id, cache_item_name,
+                                                  os.path.basename(os.path.dirname(cache_item))))
+
+    artifacts.sort()
 
     with open(APP_ID + ".yml.in", "r") as input:
         yml = input.read().rstrip()
@@ -71,12 +111,13 @@ ln -f {cache_item_name} {repo_item_rel}
     with open(APP_ID + ".yml", "w") as output:
         output.write(f"""
 {yml}
-{langs}{sources}
+{langs}
+{"".join([a.yml() for a in artifacts])}
 """)
     with open("mkgradlerepo.sh", "w") as out:
         out.write(f"""\
 #! /bin/bash
-{commands}
+{"".join([a.script() for a in artifacts])}
 """)
 
     if os.path.islink(build_dir):

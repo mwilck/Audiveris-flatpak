@@ -1,0 +1,20 @@
+
+      - type: file
+        url: https://github.com/tesseract-ocr/tessdata/blob/3.04.00/eng.traineddata?raw=true
+        sha1: 98e95f7282904f9796bfc9f1e7cb6158e9db4fcb
+      - type: file
+        url: https://github.com/tesseract-ocr/tessdata/blob/3.04.00/deu.traineddata?raw=true
+        sha1: 8e40840f918b9a342dc936d9c016a3679efb30e3
+      - type: file
+        url: https://github.com/tesseract-ocr/tessdata/blob/3.04.00/deu_frak.traineddata?raw=true
+        sha1: bb85299afea5f68c2281619d6c9254cfcb26d1c0
+      - type: file
+        url: https://github.com/tesseract-ocr/tessdata/blob/3.04.00/fra.traineddata?raw=true
+        sha1: 7e90b95bd8cc47b2a1e7e7d15f5de8fa5fcd3825
+      - type: file
+        url: https://github.com/tesseract-ocr/tessdata/blob/3.04.00/ita.traineddata?raw=true
+        sha1: c5dfdb966eb24f0bd63d399a4507c99d0af55fa1
+
+      - type: file
+        url: https://github.com/tesseract-ocr/tessdata/blob/3.04.00/rus.traineddata?raw=true
+        sha1: 75f46a03df6ae0eac24c00f431a246fe628e5ef3
