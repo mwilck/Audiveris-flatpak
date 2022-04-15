@@ -2,6 +2,8 @@
 trap 'echo "ERROR in $BASH_COMMAND" >&2' ERR
 
 TESSDATA=https://api.github.com/repos/tesseract-ocr/tessdata
+TESSDL=https://github.com/tesseract-ocr/tessdata/blob/3.04.00
+
 TAG_304=$(curl -s  "$TESSDATA/tags" | jq -r '.[] | select(.name=="3.04.00").commit.sha')
 [[ $TAG_304 ]]
 
@@ -63,30 +65,38 @@ find_language() {
 }
 
 declare -a LANGUAGES
+CHECK=
 
 if [[ $# -eq 0 ]]; then
     LANGUAGES=()
     get_languages
     interactive
 else
-    case $1 in
-	-?|--help)
-	    echo "Usage:
-$0 language [language ...]
+    while [[ $# -gt 0 ]]; do
+	case $1 in
+	    -?|--help)
+		echo "Usage:
+$0 [-c|--check] language [language ...]
+$0 [-c|--check]
 $0 list
-$0
 $0 -?" >&2
-	    exit 0;;
-	list)
-	    get_languages
-	    print_languages
-	    exit 0
-	    ;;
-	*)
-	    get_languages
-	    LANGUAGES=($@)
-	    ;;
-    esac
+		exit 0;;
+	    list)
+		get_languages
+		print_languages
+		exit 0
+		;;
+	    -c|--check)
+		CHECK=yes
+		;;
+	    *)
+		get_languages
+		LANGUAGES=($@)
+		break
+		;;
+	esac
+	shift
+    done
 fi
 
 mkdir -p languages
@@ -106,23 +116,43 @@ for lang in "${LANGUAGES[@]}"; do
 	continue
     fi
     echo "Fetching language data for $name ..." >&2
+    rm -f "$file"
     curl "$TESSDATA/git/blobs/$hash" | jq -r '.content' | \
 	base64 -d >"$file"
-	[[ -f "$file" ]]
-	check=$(cat <(printf 'blob %d\0' "$(stat -c %s "$file")") "$file" | \
-		    sha1sum | cut -d " " -f 1)
-	if [[ $check != $hash ]] ; then
-	    echo "sha1 hash of $file doesn't match expected $hash" >&2
-	    continue
-	fi
+    [[ -f "$file" ]]
+    check=$(cat <(printf 'blob %d\0' "$(stat -c %s "$file")") "$file" | \
+		sha1sum | cut -d " " -f 1)
+    if [[ $check != $hash ]] ; then
+	echo "sha1 hash of $file doesn't match expected $hash" >&2
+	rm -f "$file"
+	continue
+    fi
+    check=$(sha1sum "$file" | cut -d " " -f 1)
+    if [[ $CHECK = yes ]]; then
+	# test if "simple" download yields the correct SHA1
+	curl -L -o "${file}-1" "$TESSDL/$name.traineddata?raw=true"
+	check1=$(sha1sum "${file}-1" | cut -d " " -f 1)
+    else
+	check1=$check
+    fi
+    if [[ $check = $check1 ]]; then
+	echo "URL can be used for $lang" >&2
+	rm -fv "$file" "${file}-1"
+	lang_files="$lang_files
+      - type: file
+        url: $TESSDL/$name.traineddata?raw=true
+        sha1: $check"
+    else
+	echo "URL can't be used for $lang" >&2
+	rm -fv "$file"
 	lang_files="$lang_files
       - type: file
         path: $file
-        sha1: $(sha1sum $file | cut -d " " -f 1)"
+        sha1: $hash"
+    fi
 done
 
 if [[ $lang_files ]]; then
     echo "$lang_files" >>lang_sources.yml
     echo "lang_sources.yml generated" >&2
 fi
-
