@@ -13,9 +13,9 @@ APP_ID = "org.audiveris.audiveris"
 
 @total_ordering
 class Artifact:
-    MAVEN_CENTRAL = "https://repo1.maven.org/maven2"
+    MAVEN_CENTRAL = "https://jcenter.bintray.com"
     JBOSS_3RDPARTY = "https://repository.jboss.org/nexus/content/repositories/thirdparty-releases"
-    jboss_items = ("jai-core", "jai-codec")
+    jboss_items = () # "jai-core", "jai-codec"
 
     def __init__(self, group_id, artifact_id, version_id, item_name, sha1):
         self.group_id = group_id.replace(".", "/")
