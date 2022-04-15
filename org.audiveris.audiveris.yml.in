@@ -39,12 +39,13 @@ modules:
       - install -m 0644 -D -m 644 org.audiveris.audiveris.desktop /app/share/applications/org.audiveris.audiveris.desktop
       - install -m 0644 -D -m 644 org.audiveris.audiveris.metainfo.xml /app/share/metainfo/org.audiveris.audiveris.metainfo.xml
       - ./gradlew --offline build
-      - tar x -C /app --strip-components=1 -f build/distributions/Audiveris-*.tar
+      - tar x -C /app --strip-components=1 -f build/distributions/Audiveris.tar
       - sed -i -f add-tessdata-prefix.sed /app/bin/Audiveris
     sources:
       - type: git
         url: https://github.com/Audiveris/audiveris
-        branch: master
+        tag: 5.2.4
+        commit: 3353f409cadda7c0470312f99986a3f58b976ede
       - type: file
         url: https://services.gradle.org/distributions/gradle-5.6.4-bin.zip
         sha256: 1f3067073041bc44554d0efe5d402a33bc3d3c93cc39ab684f308586d732a80d

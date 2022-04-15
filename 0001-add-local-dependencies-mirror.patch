@@ -32,36 +32,6 @@ index 7dca6b8..1946a50 100644
      //flatDir(dirs: 'dev/externals') // for libraries not in any other repository
  }
  
-diff --git a/schemas/build.gradle b/schemas/build.gradle
-index 3abd0dd..4f40263 100644
---- a/schemas/build.gradle
-+++ b/schemas/build.gradle
-@@ -48,11 +48,14 @@
- apply plugin: 'java'
- 
- repositories { 
--  jcenter() 
--    maven {
--        name = 'mvnrepository' 
--        url = 'https://mvnrepository.com/artifact/net.sf.saxon/Saxon-HE'
-+     maven {
-+        url '../dependencies'
-     }
-+ jcenter() 
-+  //  maven {
-+  //      name = 'mvnrepository' 
-+  //      url = 'https://mvnrepository.com/artifact/net.sf.saxon/Saxon-HE'
-+  //  }
- }
- 
- dependencies { 
-@@ -316,4 +319,4 @@ task checkXsltProc {
-         
-         ///genHtmls.dependsOn("newGenHtml$cls")    
-     }
--}
-\ No newline at end of file
-+}
 -- 
 2.34.1
 

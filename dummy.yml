@@ -21,4 +21,5 @@ modules:
         sha256: 1f3067073041bc44554d0efe5d402a33bc3d3c93cc39ab684f308586d732a80d
       - type: git
         url: https://github.com/Audiveris/audiveris
-        branch: master
+        tag: 5.2.4
+        commit: 3353f409cadda7c0470312f99986a3f58b976ede
