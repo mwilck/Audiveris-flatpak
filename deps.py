@@ -13,9 +13,6 @@ APP_ID = "org.audiveris.audiveris"
 
 @total_ordering
 class Artifact:
-    MAVEN_CENTRAL = "https://repo1.maven.org/maven2"
-    JBOSS_3RDPARTY = "https://repository.jboss.org/nexus/content/repositories/thirdparty-releases"
-    jboss_items = ("jai-core", "jai-codec")
 
     def __init__(self, group_id, artifact_id, version_id, item_name, sha1):
         self.group_id = group_id.replace(".", "/")
@@ -32,10 +29,12 @@ class Artifact:
         return "/".join([self.dir(), self.item_name])
 
     def url(self):
-        if self.artifact_id in self.jboss_items:
-            host = self.JBOSS_3RDPARTY
+        if self.artifact_id.startswith("com.springsource.javax.media.jai"):
+            host = "https://repository.springsource.com/maven/bundles/external"
+        elif self.artifact_id in ("jai-core", "jai-codec"):
+            host = "https://repository.jboss.org/nexus/content/repositories/thirdparty-releases"
         else:
-            host = self.MAVEN_CENTRAL
+            host = "https://repo1.maven.org/maven2"
         return "/".join([host, self.path()])
 
     def yml(self, indent=6):
