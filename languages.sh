@@ -2,15 +2,16 @@
 trap 'echo "ERROR in $BASH_COMMAND" >&2' ERR
 
 TESSDATA=https://api.github.com/repos/tesseract-ocr/tessdata
-TESSDL=https://github.com/tesseract-ocr/tessdata/blob/3.04.00
+TESSDL=https://github.com/tesseract-ocr/tessdata/blob/4.0.0
 
-TAG_304=$(curl -s  "$TESSDATA/tags" | jq -r '.[] | select(.name=="3.04.00").commit.sha')
-[[ $TAG_304 ]]
+TAGNAME=4.0.0
+TAG=$(curl -s  "$TESSDATA/tags" | jq -r '.[] | select(.name=="'"$TAGNAME"'").commit.sha')
+[[ $TAG ]]
 
 get_languages() {
     echo "Fetching language list ..." >&2
     mapfile -t LANG \
-	< <(curl -s "$TESSDATA/git/trees/$TAG_304" | \
+	< <(curl -s "$TESSDATA/git/trees/$TAG" | \
 		jq -r '.tree[] | select (.path|endswith(".traineddata")) |  [ .path,.sha | rtrimstr(".traineddata") ] | join(":")')
 }
 
