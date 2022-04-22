@@ -621,32 +621,32 @@ modules:
         url: https://repo1.maven.org/maven2/org/bushe/eventbus/1.4/eventbus-1.4.pom
         sha1: 94441079b581c27511b3341eefa0cc95dfa5200a
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp-presets/1.4.4/javacpp-presets-1.4.4.pom
-        sha1: 469be5afa3b5f0a9dabf7a1ab0e865367bb90609
+        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp-presets/1.5.6/javacpp-presets-1.5.6.pom
+        sha1: b8562e1c47078d16fa55cca36470f76c0aaebbe5
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.77.0-1.4.4/leptonica-1.77.0-1.4.4-linux-x86_64.jar
-        sha1: 4685c9d0681251e381b49d43048fb520e7826b22
+        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.6/javacpp-1.5.6.jar
+        sha1: 1f18a820aadd943577b0b372554f9e35e1232e25
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.77.0-1.4.4/leptonica-1.77.0-1.4.4.jar
-        sha1: 8ecb79341d213925892043059d7f3f211e00bb02
+        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.6/javacpp-1.5.6.pom
+        sha1: 4ff5a8eaa73d9e8e6c1898efbfa42854a4a36547
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp-presets/leptonica/1.77.0-1.4.4/leptonica-1.77.0-1.4.4.pom
-        sha1: a398e5009ca4e546cc0e7b4321184aae6b1fb3ee
+        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.81.1-1.5.6/leptonica-1.81.1-1.5.6-linux-x86_64.jar
+        sha1: 50ee2a7e723650466294a9d2d6d08ba4444500dd
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp-presets/tesseract/4.0.0-1.4.4/tesseract-4.0.0-1.4.4-linux-x86_64.jar
-        sha1: e50ad986dc57df52f30e23e363b1828edf3d4eba
+        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.81.1-1.5.6/leptonica-1.81.1-1.5.6.jar
+        sha1: ddac2f53d3218c349b5bff8ac5ad30a10e30ffc5
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp-presets/tesseract/4.0.0-1.4.4/tesseract-4.0.0-1.4.4.jar
-        sha1: 37b4610a753d244469b1bacb364bc0d9cf022b3a
+        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.81.1-1.5.6/leptonica-1.81.1-1.5.6.pom
+        sha1: 66f72d7afbecb7ee801a809831afb4b992c05074
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp-presets/tesseract/4.0.0-1.4.4/tesseract-4.0.0-1.4.4.pom
-        sha1: 0984f12bd01c07b07decb49e9bc4d47f74c91e83
+        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/4.1.1-1.5.6/tesseract-4.1.1-1.5.6-linux-x86_64.jar
+        sha1: 98974bd9e59b83a76a00ef7fd9b671dc375bd4b7
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.4.4/javacpp-1.4.4.jar
-        sha1: 6408ace5ec4fdc5b64ecb67829e0142cd361d64a
+        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/4.1.1-1.5.6/tesseract-4.1.1-1.5.6.jar
+        sha1: de0e5815417e5eb47cf5468bbdc552281a5e5877
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.4.4/javacpp-1.4.4.pom
-        sha1: ad812a715c0aaad83bb004dcd44a39aa8d2c7868
+        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/4.1.1-1.5.6/tesseract-4.1.1-1.5.6.pom
+        sha1: 38a69832706edf59836a98aed2711e383845ff50
       - type: file
         url: https://repo1.maven.org/maven2/org/codehaus/mojo/jaxb2-maven-plugin/2.5.0/jaxb2-maven-plugin-2.5.0.jar
         sha1: aab18cbe474c08919d7e493407074c28dcc091dd
