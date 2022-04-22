@@ -1,15 +1,14 @@
 #! /bin/bash
 trap 'echo "ERROR in $BASH_COMMAND" >&2' ERR
 
-TESSDATA=https://api.github.com/repos/tesseract-ocr/tessdata
-TESSDL=https://github.com/tesseract-ocr/tessdata/blob/4.0.0
-
-TAGNAME=4.0.0
-TAG=$(curl -s  "$TESSDATA/tags" | jq -r '.[] | select(.name=="'"$TAGNAME"'").commit.sha')
-[[ $TAG ]]
+TAGNAME=4.1.0
+PROJECT=tessdata
 
 get_languages() {
-    echo "Fetching language list ..." >&2
+    echo "Fetching language list for $PROJECT $TAGNAME ..." >&2
+    TAG=$(curl -s  "$TESSDATA/tags" | jq -r '.[] | select(.name=="'"$TAGNAME"'").commit.sha')
+    [[ $TAG ]]
+
     mapfile -t LANG \
 	< <(curl -s "$TESSDATA/git/trees/$TAG" | \
 		jq -r '.tree[] | select (.path|endswith(".traineddata")) |  [ .path,.sha | rtrimstr(".traineddata") ] | join(":")')
@@ -67,37 +66,52 @@ find_language() {
 
 declare -a LANGUAGES
 CHECK=
+INTERACTIVE=
+LIST=
 
-if [[ $# -eq 0 ]]; then
-    LANGUAGES=()
-    get_languages
-    interactive
-else
-    while [[ $# -gt 0 ]]; do
-	case $1 in
-	    -?|--help)
-		echo "Usage:
-$0 [-c|--check] language [language ...]
-$0 [-c|--check]
-$0 list
+while [[ $# -gt 0 ]]; do
+    echo "$1" >&2
+    case $1 in
+	-\?|--help)
+	    echo "Usage:
+$0 [-b|--best] [-c|--check] language [language ...]
+$0 [-b|--best] [-c|--check] (-i|--interactive)
+$0 [-b|--best] [-l|--list]
 $0 -?" >&2
-		exit 0;;
-	    list)
-		get_languages
-		print_languages
-		exit 0
-		;;
-	    -c|--check)
-		CHECK=yes
-		;;
-	    *)
-		get_languages
-		LANGUAGES=($@)
-		break
-		;;
-	esac
-	shift
-    done
+	    exit 0
+	    ;;
+	-l|--list)
+	    LIST=yes
+	    ;;
+	-c|--check)
+	    CHECK=yes
+	    ;;
+	-b|--best)
+	    PROJECT=tessdata_best
+	    ;;
+	-i|--interactive)
+	    INTERACTIVE=yes
+	    ;;
+	*)
+	    break
+	    ;;
+    esac
+    shift
+done
+
+TESSDATA=https://api.github.com/repos/tesseract-ocr/$PROJECT
+TESSDL=https://github.com/tesseract-ocr/$PROJECT/blob/$TAGNAME
+
+if [[ $LIST ]]; then
+    get_languages
+    print_languages
+    exit 0
+fi
+
+LANGUAGES=($@)
+get_languages
+if [[ $INTERACTIVE ]]; then
+    interactive
 fi
 
 mkdir -p languages
@@ -116,7 +130,7 @@ for lang in "${LANGUAGES[@]}"; do
 	echo "$file exists already, skipping" >&2
 	continue
     fi
-    echo "Fetching language data for $name ..." >&2
+    echo "Fetching language data for $name ($TAGNAME) ..." >&2
     rm -f "$file"
     curl "$TESSDATA/git/blobs/$hash" | jq -r '.content' | \
 	base64 -d >"$file"
