@@ -100,7 +100,7 @@ $0 -?" >&2
 done
 
 TESSDATA=https://api.github.com/repos/tesseract-ocr/$PROJECT
-TESSDL=https://github.com/tesseract-ocr/$PROJECT/blob/$TAGNAME
+TESSDL=https://github.com/tesseract-ocr/$PROJECT/raw/$TAGNAME
 
 if [[ $LIST ]]; then
     get_languages
@@ -145,7 +145,7 @@ for lang in "${LANGUAGES[@]}"; do
     check=$(sha1sum "$file" | cut -d " " -f 1)
     if [[ $CHECK = yes ]]; then
 	# test if "simple" download yields the correct SHA1
-	curl -L -o "${file}-1" "$TESSDL/$name.traineddata?raw=true"
+	curl -L -o "${file}-1" "$TESSDL/$name.traineddata"
 	check1=$(sha1sum "${file}-1" | cut -d " " -f 1)
     else
 	check1=$check
@@ -155,7 +155,7 @@ for lang in "${LANGUAGES[@]}"; do
 	rm -fv "$file" "${file}-1"
 	lang_files="$lang_files
       - type: file
-        url: $TESSDL/$name.traineddata?raw=true
+        url: $TESSDL/$name.traineddata
         sha1: $check"
     else
 	echo "URL can't be used for $lang" >&2
