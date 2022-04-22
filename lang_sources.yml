@@ -1,15 +1,15 @@
       - type: file
-        url: https://github.com/tesseract-ocr/tessdata_best/blob/4.1.0/deu.traineddata?raw=true
-        sha1: 6a9ea6731dfa2c745833853d87dd23ac729543fd
+        url: https://github.com/tesseract-ocr/tessdata/raw/4.1.0/deu.traineddata
+        sha1: cb8bac010fd6e7be2428cefefe25222700d9d69c
       - type: file
-        url: https://github.com/tesseract-ocr/tessdata_best/blob/4.1.0/eng.traineddata?raw=true
-        sha1: a63325f7bed43a0070ea61c3e4eccf646e429839
+        url: https://github.com/tesseract-ocr/tessdata/raw/4.1.0/eng.traineddata
+        sha1: 007b522901a665bc2037428602d4d527f5ead7ed
       - type: file
-        url: https://github.com/tesseract-ocr/tessdata_best/blob/4.1.0/fra.traineddata?raw=true
-        sha1: 833b76bd14ececd34d13c20471390037edcaa4d6
+        url: https://github.com/tesseract-ocr/tessdata/raw/4.1.0/fra.traineddata
+        sha1: 1600d9c277d35b74b0b46f705f1f374378f7272b
       - type: file
-        url: https://github.com/tesseract-ocr/tessdata_best/blob/4.1.0/ita.traineddata?raw=true
-        sha1: c976c11d512df202185e7397190df8189613591e
+        url: https://github.com/tesseract-ocr/tessdata/raw/4.1.0/ita.traineddata
+        sha1: 9228cb129566198ab90138ebe190d882218225e9
       - type: file
-        url: https://github.com/tesseract-ocr/tessdata/blob/4.1.0/deu_frak.traineddata?raw=true
+        url: https://github.com/tesseract-ocr/tessdata/raw/4.1.0/deu_frak.traineddata
         sha1: de986866ea505476e6b61e93ae5fb1c6ac1b4a09
