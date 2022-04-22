@@ -46,6 +46,28 @@
   <launchable type="desktop-id">org.audiveris.audiveris.desktop</launchable>
   <developer_name>Hervé Bitteur et al.</developer_name>
   <releases>
+    <release version="5.3.0" date="2022-04-22" urgency="low"
+	     type="development">
+      <description>
+	<p>
+	  This is the 5.3.0 development version of Audiveris.
+	</p>
+	<ul>
+	  <li>
+	    Bug fixes
+	  </li>
+	  <li>
+	    Migration from Tesseract 3 to Tesseract 4
+	  </li>
+	  <li>
+	    Migration to MusicXML 4.0
+	  </li>
+	  <li>
+	    Generation of Schemas Documentation
+	  </li>
+	</ul>
+      </description>
+    </release>
     <release version="5.2.5" date="2022-01-18" urgency="medium" type="stable">
       <description>
 	<p>
