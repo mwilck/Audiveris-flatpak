@@ -20,6 +20,8 @@ finish-args:
   - --filesystem=xdg-pictures
   - --env=PATH=/app/bin:/app/jre/bin:/usr/bin
   - --env=JAVA_HOME=/app/jre
+  # Calling abort() on malloc-check doesn't fly with OpenJDK
+  - --env=MALLOC_CHECK_=0
 modules:
   - name: openjdk
     buildsystem: simple
