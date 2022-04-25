@@ -66,3 +66,38 @@ for the flatpak source file `io.github.Audivervis.audiveris.yml`.
 **Important:** Building **audiveris** 5.2.5 and newer requires **JDK 17**.
 Make sure that not only the paths to `java` and `javac`, but also the
 environment variables `JAVA_HOME` etc. point to the correct SDK.
+
+
+# Running Audiveris
+
+This section lists some special properties of the Flatpak edition of
+Audiveris. Please see the [Audiveris
+handbook](https://audiveris.github.io/audiveris/_pages/handbook/) for general
+information and program usage.
+
+## Paths
+
+The general remarks from
+[Folders](https://audiveris.github.io/audiveris/_pages/folders/) apply, as
+modified by Flatpak:
+
+ * The **config folder** is
+   `$HOME/.var/app/org.audiveris.audiveris/config/AudiverisLtd/audiveris`.
+ * **Log files** are stored under
+   `$HOME/.var/app/org.audiveris.audiveris/cache/AudiverisLtd/audiveris/log`.
+
+### Example: Enabling Debug Logging
+
+To enable debug logging for certain java classes:
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <configuration>
+        <include optional="true" resource="res/logback-elements.xml"/>
+        <logger name="org.audiveris.omr.text.tesseract.TesseractOCR" level="DEBUG"/>
+        <logger name="org.audiveris.omr.text.tesseract.TesseractOrder" level="DEBUG"/>
+        <root level="INFO">
+            <appender-ref ref="CONSOLE" />
+        </root>
+    </configuration>
+
+To enable debug logging globally, simply use `<root level="DEBUG">` above.
