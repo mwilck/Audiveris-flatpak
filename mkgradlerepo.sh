@@ -163,38 +163,10 @@ mkdir -p dependencies/commons-io/commons-io/2.8.0
 ln -f commons-io-2.8.0.jar dependencies/commons-io/commons-io/2.8.0/commons-io-2.8.0.jar
 mkdir -p dependencies/commons-io/commons-io/2.8.0
 ln -f commons-io-2.8.0.pom dependencies/commons-io/commons-io/2.8.0/commons-io-2.8.0.pom
-mkdir -p dependencies/de/intarsys/opensource/iscwt/5.6
-ln -f iscwt-5.6.jar dependencies/de/intarsys/opensource/iscwt/5.6/iscwt-5.6.jar
-mkdir -p dependencies/de/intarsys/opensource/iscwt/5.6
-ln -f iscwt-5.6.pom dependencies/de/intarsys/opensource/iscwt/5.6/iscwt-5.6.pom
-mkdir -p dependencies/de/intarsys/opensource/isfreetype/5.6
-ln -f isfreetype-5.6.jar dependencies/de/intarsys/opensource/isfreetype/5.6/isfreetype-5.6.jar
-mkdir -p dependencies/de/intarsys/opensource/isfreetype/5.6
-ln -f isfreetype-5.6.pom dependencies/de/intarsys/opensource/isfreetype/5.6/isfreetype-5.6.pom
-mkdir -p dependencies/de/intarsys/opensource/isnativec/5.6
-ln -f isnativec-5.6.jar dependencies/de/intarsys/opensource/isnativec/5.6/isnativec-5.6.jar
-mkdir -p dependencies/de/intarsys/opensource/isnativec/5.6
-ln -f isnativec-5.6.pom dependencies/de/intarsys/opensource/isnativec/5.6/isnativec-5.6.pom
-mkdir -p dependencies/de/intarsys/opensource/isrt/4.11
-ln -f isrt-4.11.jar dependencies/de/intarsys/opensource/isrt/4.11/isrt-4.11.jar
-mkdir -p dependencies/de/intarsys/opensource/isrt/4.11
-ln -f isrt-4.11.pom dependencies/de/intarsys/opensource/isrt/4.11/isrt-4.11.pom
-mkdir -p dependencies/de/intarsys/opensource/jPod/5.6
-ln -f jPod-5.6.jar dependencies/de/intarsys/opensource/jPod/5.6/jPod-5.6.jar
-mkdir -p dependencies/de/intarsys/opensource/jPod/5.6
-ln -f jPod-5.6.pom dependencies/de/intarsys/opensource/jPod/5.6/jPod-5.6.pom
-mkdir -p dependencies/de/intarsys/opensource/jPodFonts/5.5
-ln -f jPodFonts-5.5.jar dependencies/de/intarsys/opensource/jPodFonts/5.5/jPodFonts-5.5.jar
-mkdir -p dependencies/de/intarsys/opensource/jPodFonts/5.5
-ln -f jPodFonts-5.5.pom dependencies/de/intarsys/opensource/jPodFonts/5.5/jPodFonts-5.5.pom
-mkdir -p dependencies/de/intarsys/opensource/jPodRenderer/5.6
-ln -f jPodRenderer-5.6.jar dependencies/de/intarsys/opensource/jPodRenderer/5.6/jPodRenderer-5.6.jar
-mkdir -p dependencies/de/intarsys/opensource/jPodRenderer/5.6
-ln -f jPodRenderer-5.6.pom dependencies/de/intarsys/opensource/jPodRenderer/5.6/jPodRenderer-5.6.pom
-mkdir -p dependencies/de/intarsys/opensource/jbig2/5.5.1
-ln -f jbig2-5.5.1.jar dependencies/de/intarsys/opensource/jbig2/5.5.1/jbig2-5.5.1.jar
-mkdir -p dependencies/de/intarsys/opensource/jbig2/5.5.1
-ln -f jbig2-5.5.1.pom dependencies/de/intarsys/opensource/jbig2/5.5.1/jbig2-5.5.1.pom
+mkdir -p dependencies/commons-logging/commons-logging/1.2
+ln -f commons-logging-1.2.jar dependencies/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+mkdir -p dependencies/commons-logging/commons-logging/1.2
+ln -f commons-logging-1.2.pom dependencies/commons-logging/commons-logging/1.2/commons-logging-1.2.pom
 mkdir -p dependencies/gov/nist/math/jama/1.0.3
 ln -f jama-1.0.3.jar dependencies/gov/nist/math/jama/1.0.3/jama-1.0.3.jar
 mkdir -p dependencies/gov/nist/math/jama/1.0.3
@@ -223,14 +195,6 @@ mkdir -p dependencies/javax/media/jai-core/1.1.3
 ln -f jai-core-1.1.3.jar dependencies/javax/media/jai-core/1.1.3/jai-core-1.1.3.jar
 mkdir -p dependencies/javax/media/jai-core/1.1.3
 ln -f jai-core-1.1.3.pom dependencies/javax/media/jai-core/1.1.3/jai-core-1.1.3.pom
-mkdir -p dependencies/javax/media/jai/com.springsource.javax.media.jai.codec/1.1.3
-ln -f com.springsource.javax.media.jai.codec-1.1.3.jar dependencies/javax/media/jai/com.springsource.javax.media.jai.codec/1.1.3/com.springsource.javax.media.jai.codec-1.1.3.jar
-mkdir -p dependencies/javax/media/jai/com.springsource.javax.media.jai.codec/1.1.3
-ln -f com.springsource.javax.media.jai.codec-1.1.3.pom dependencies/javax/media/jai/com.springsource.javax.media.jai.codec/1.1.3/com.springsource.javax.media.jai.codec-1.1.3.pom
-mkdir -p dependencies/javax/media/jai/com.springsource.javax.media.jai.core/1.1.3
-ln -f com.springsource.javax.media.jai.core-1.1.3.jar dependencies/javax/media/jai/com.springsource.javax.media.jai.core/1.1.3/com.springsource.javax.media.jai.core-1.1.3.jar
-mkdir -p dependencies/javax/media/jai/com.springsource.javax.media.jai.core/1.1.3
-ln -f com.springsource.javax.media.jai.core-1.1.3.pom dependencies/javax/media/jai/com.springsource.javax.media.jai.core/1.1.3/com.springsource.javax.media.jai.core-1.1.3.pom
 mkdir -p dependencies/javax/xml/bind/jaxb-api-parent/2.3.1
 ln -f jaxb-api-parent-2.3.1.pom dependencies/javax/xml/bind/jaxb-api-parent/2.3.1/jaxb-api-parent-2.3.1.pom
 mkdir -p dependencies/javax/xml/bind/jaxb-api/2.3.1
@@ -245,10 +209,6 @@ mkdir -p dependencies/net/imagej/ij/1.53j
 ln -f ij-1.53j.jar dependencies/net/imagej/ij/1.53j/ij-1.53j.jar
 mkdir -p dependencies/net/imagej/ij/1.53j
 ln -f ij-1.53j.pom dependencies/net/imagej/ij/1.53j/ij-1.53j.pom
-mkdir -p dependencies/net/java/dev/jna/jna/3.2.7
-ln -f jna-3.2.7.jar dependencies/net/java/dev/jna/jna/3.2.7/jna-3.2.7.jar
-mkdir -p dependencies/net/java/dev/jna/jna/3.2.7
-ln -f jna-3.2.7.pom dependencies/net/java/dev/jna/jna/3.2.7/jna-3.2.7.pom
 mkdir -p dependencies/net/java/jvnet-parent/1
 ln -f jvnet-parent-1.pom dependencies/net/java/jvnet-parent/1/jvnet-parent-1.pom
 mkdir -p dependencies/net/java/jvnet-parent/5
@@ -277,6 +237,8 @@ mkdir -p dependencies/org/apache/apache/13
 ln -f apache-13.pom dependencies/org/apache/apache/13/apache-13.pom
 mkdir -p dependencies/org/apache/apache/18
 ln -f apache-18.pom dependencies/org/apache/apache/18/apache-18.pom
+mkdir -p dependencies/org/apache/apache/19
+ln -f apache-19.pom dependencies/org/apache/apache/19/apache-19.pom
 mkdir -p dependencies/org/apache/apache/21
 ln -f apache-21.pom dependencies/org/apache/apache/21/apache-21.pom
 mkdir -p dependencies/org/apache/apache/23
@@ -285,6 +247,8 @@ mkdir -p dependencies/org/apache/commons/commons-lang3/3.9
 ln -f commons-lang3-3.9.jar dependencies/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar
 mkdir -p dependencies/org/apache/commons/commons-lang3/3.9
 ln -f commons-lang3-3.9.pom dependencies/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.pom
+mkdir -p dependencies/org/apache/commons/commons-parent/34
+ln -f commons-parent-34.pom dependencies/org/apache/commons/commons-parent/34/commons-parent-34.pom
 mkdir -p dependencies/org/apache/commons/commons-parent/48
 ln -f commons-parent-48.pom dependencies/org/apache/commons/commons-parent/48/commons-parent-48.pom
 mkdir -p dependencies/org/apache/commons/commons-parent/52
@@ -353,6 +317,16 @@ mkdir -p dependencies/org/apache/maven/skins/maven-fluido-skin/1.6
 ln -f maven-fluido-skin-1.6.pom dependencies/org/apache/maven/skins/maven-fluido-skin/1.6/maven-fluido-skin-1.6.pom
 mkdir -p dependencies/org/apache/maven/skins/maven-skins/30
 ln -f maven-skins-30.pom dependencies/org/apache/maven/skins/maven-skins/30/maven-skins-30.pom
+mkdir -p dependencies/org/apache/pdfbox/fontbox/2.0.27
+ln -f fontbox-2.0.27.jar dependencies/org/apache/pdfbox/fontbox/2.0.27/fontbox-2.0.27.jar
+mkdir -p dependencies/org/apache/pdfbox/fontbox/2.0.27
+ln -f fontbox-2.0.27.pom dependencies/org/apache/pdfbox/fontbox/2.0.27/fontbox-2.0.27.pom
+mkdir -p dependencies/org/apache/pdfbox/pdfbox-parent/2.0.27
+ln -f pdfbox-parent-2.0.27.pom dependencies/org/apache/pdfbox/pdfbox-parent/2.0.27/pdfbox-parent-2.0.27.pom
+mkdir -p dependencies/org/apache/pdfbox/pdfbox/2.0.27
+ln -f pdfbox-2.0.27.jar dependencies/org/apache/pdfbox/pdfbox/2.0.27/pdfbox-2.0.27.jar
+mkdir -p dependencies/org/apache/pdfbox/pdfbox/2.0.27
+ln -f pdfbox-2.0.27.pom dependencies/org/apache/pdfbox/pdfbox/2.0.27/pdfbox-2.0.27.pom
 mkdir -p dependencies/org/audiveris/proxymusic/4.0.2
 ln -f proxymusic-4.0.2.jar dependencies/org/audiveris/proxymusic/4.0.2/proxymusic-4.0.2.jar
 mkdir -p dependencies/org/audiveris/proxymusic/4.0.2
@@ -361,24 +335,24 @@ mkdir -p dependencies/org/bushe/eventbus/1.4
 ln -f eventbus-1.4.jar dependencies/org/bushe/eventbus/1.4/eventbus-1.4.jar
 mkdir -p dependencies/org/bushe/eventbus/1.4
 ln -f eventbus-1.4.pom dependencies/org/bushe/eventbus/1.4/eventbus-1.4.pom
-mkdir -p dependencies/org/bytedeco/javacpp-presets/1.5.6
-ln -f javacpp-presets-1.5.6.pom dependencies/org/bytedeco/javacpp-presets/1.5.6/javacpp-presets-1.5.6.pom
-mkdir -p dependencies/org/bytedeco/javacpp/1.5.6
-ln -f javacpp-1.5.6.jar dependencies/org/bytedeco/javacpp/1.5.6/javacpp-1.5.6.jar
-mkdir -p dependencies/org/bytedeco/javacpp/1.5.6
-ln -f javacpp-1.5.6.pom dependencies/org/bytedeco/javacpp/1.5.6/javacpp-1.5.6.pom
-mkdir -p dependencies/org/bytedeco/leptonica/1.81.1-1.5.6
-ln -f leptonica-1.81.1-1.5.6-linux-x86_64.jar dependencies/org/bytedeco/leptonica/1.81.1-1.5.6/leptonica-1.81.1-1.5.6-linux-x86_64.jar
-mkdir -p dependencies/org/bytedeco/leptonica/1.81.1-1.5.6
-ln -f leptonica-1.81.1-1.5.6.jar dependencies/org/bytedeco/leptonica/1.81.1-1.5.6/leptonica-1.81.1-1.5.6.jar
-mkdir -p dependencies/org/bytedeco/leptonica/1.81.1-1.5.6
-ln -f leptonica-1.81.1-1.5.6.pom dependencies/org/bytedeco/leptonica/1.81.1-1.5.6/leptonica-1.81.1-1.5.6.pom
-mkdir -p dependencies/org/bytedeco/tesseract/4.1.1-1.5.6
-ln -f tesseract-4.1.1-1.5.6-linux-x86_64.jar dependencies/org/bytedeco/tesseract/4.1.1-1.5.6/tesseract-4.1.1-1.5.6-linux-x86_64.jar
-mkdir -p dependencies/org/bytedeco/tesseract/4.1.1-1.5.6
-ln -f tesseract-4.1.1-1.5.6.jar dependencies/org/bytedeco/tesseract/4.1.1-1.5.6/tesseract-4.1.1-1.5.6.jar
-mkdir -p dependencies/org/bytedeco/tesseract/4.1.1-1.5.6
-ln -f tesseract-4.1.1-1.5.6.pom dependencies/org/bytedeco/tesseract/4.1.1-1.5.6/tesseract-4.1.1-1.5.6.pom
+mkdir -p dependencies/org/bytedeco/javacpp-presets/1.5.9
+ln -f javacpp-presets-1.5.9.pom dependencies/org/bytedeco/javacpp-presets/1.5.9/javacpp-presets-1.5.9.pom
+mkdir -p dependencies/org/bytedeco/javacpp/1.5.9
+ln -f javacpp-1.5.9.jar dependencies/org/bytedeco/javacpp/1.5.9/javacpp-1.5.9.jar
+mkdir -p dependencies/org/bytedeco/javacpp/1.5.9
+ln -f javacpp-1.5.9.pom dependencies/org/bytedeco/javacpp/1.5.9/javacpp-1.5.9.pom
+mkdir -p dependencies/org/bytedeco/leptonica/1.83.0-1.5.9
+ln -f leptonica-1.83.0-1.5.9-linux-x86_64.jar dependencies/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9-linux-x86_64.jar
+mkdir -p dependencies/org/bytedeco/leptonica/1.83.0-1.5.9
+ln -f leptonica-1.83.0-1.5.9.jar dependencies/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9.jar
+mkdir -p dependencies/org/bytedeco/leptonica/1.83.0-1.5.9
+ln -f leptonica-1.83.0-1.5.9.pom dependencies/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9.pom
+mkdir -p dependencies/org/bytedeco/tesseract/5.3.1-1.5.9
+ln -f tesseract-5.3.1-1.5.9-linux-x86_64.jar dependencies/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9-linux-x86_64.jar
+mkdir -p dependencies/org/bytedeco/tesseract/5.3.1-1.5.9
+ln -f tesseract-5.3.1-1.5.9.jar dependencies/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9.jar
+mkdir -p dependencies/org/bytedeco/tesseract/5.3.1-1.5.9
+ln -f tesseract-5.3.1-1.5.9.pom dependencies/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9.pom
 mkdir -p dependencies/org/codehaus/mojo/jaxb2-maven-plugin/2.5.0
 ln -f jaxb2-maven-plugin-2.5.0.jar dependencies/org/codehaus/mojo/jaxb2-maven-plugin/2.5.0/jaxb2-maven-plugin-2.5.0.jar
 mkdir -p dependencies/org/codehaus/mojo/jaxb2-maven-plugin/2.5.0

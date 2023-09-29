@@ -80,6 +80,9 @@ modules:
         url: https://github.com/tesseract-ocr/tessdata/raw/4.1.0/deu_frak.traineddata
         sha1: de986866ea505476e6b61e93ae5fb1c6ac1b4a09
       - type: file
+        url: https://github.com/tesseract-ocr/tessdata/raw/4.1.0/lat.traineddata
+        sha1: 21e97b6104f18ad43a20d032dce3e1346582d648
+      - type: file
         url: https://repo1.maven.org/maven2/args4j/args4j-site/2.33/args4j-site-2.33.pom
         sha1: 09ba12fde00306694af3ce9f5ff302c858345edf
       - type: file
@@ -326,53 +329,11 @@ modules:
         url: https://repo1.maven.org/maven2/commons-io/commons-io/2.8.0/commons-io-2.8.0.pom
         sha1: 9bde4473ef8c6f2e5aef5bc5fbf357663a90834e
       - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/iscwt/5.6/iscwt-5.6.jar
-        sha1: 005113f6f5bb43fc2e879aa85a836a313e8f052f
+        url: https://repo1.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+        sha1: 4bfc12adfe4842bf07b657f0369c4cb522955686
       - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/iscwt/5.6/iscwt-5.6.pom
-        sha1: 5c7262073e18bc2edc0d9f8853b3abe8e27f343e
-      - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/isfreetype/5.6/isfreetype-5.6.jar
-        sha1: 79c9e7c1017300832c9d5f8c924bd0e70eb01766
-      - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/isfreetype/5.6/isfreetype-5.6.pom
-        sha1: a58b6afa2198f09c5e39685911e92afe55546039
-      - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/isnativec/5.6/isnativec-5.6.jar
-        sha1: 7b15bf48c8a3b205f3db68f026eee62243663c34
-      - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/isnativec/5.6/isnativec-5.6.pom
-        sha1: ebb5372527b3f353f098a36788d7f8cace24f17e
-      - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/isrt/4.11/isrt-4.11.jar
-        sha1: 9d030112f0dbd930ebf7b74b0e43dd3938e48712
-      - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/isrt/4.11/isrt-4.11.pom
-        sha1: 4f52586bae0d74117d112586e2087808d4679275
-      - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/jPod/5.6/jPod-5.6.jar
-        sha1: 25396dd155968e8f082587a19e22109a3beeeb7f
-      - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/jPod/5.6/jPod-5.6.pom
-        sha1: a113796fc090145bcb7dc49ddd6277f8bb5d4500
-      - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/jPodFonts/5.5/jPodFonts-5.5.jar
-        sha1: 82805b14499e769357bd63c635f6872a47239385
-      - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/jPodFonts/5.5/jPodFonts-5.5.pom
-        sha1: 1fc304fb0f3ec6572ae58f44d35c7ba92d00cb08
-      - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/jPodRenderer/5.6/jPodRenderer-5.6.jar
-        sha1: ee87af318273e04d56440516a7b6e985f87f98b6
-      - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/jPodRenderer/5.6/jPodRenderer-5.6.pom
-        sha1: 2f7a2a13be904f6034cf7af273bdd37561b040ff
-      - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/jbig2/5.5.1/jbig2-5.5.1.jar
-        sha1: a3f4214b62615d4456de761ccef1136cba65a663
-      - type: file
-        url: https://repo1.maven.org/maven2/de/intarsys/opensource/jbig2/5.5.1/jbig2-5.5.1.pom
-        sha1: ce2a60c3c82d47f4bc5fbbe51d6cd6dd5df59ff4
+        url: https://repo1.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.pom
+        sha1: 075c03ba4b01932842a996ef8d3fc1ab61ddeac2
       - type: file
         url: https://repo1.maven.org/maven2/gov/nist/math/jama/1.0.3/jama-1.0.3.jar
         sha1: 8bcf5a314b76cadd68daa37eafe0a46d8909ab47
@@ -416,18 +377,6 @@ modules:
         url: https://repository.jboss.org/nexus/content/repositories/thirdparty-releases/javax/media/jai-core/1.1.3/jai-core-1.1.3.pom
         sha1: 318a8c98f6f8a3161fbe72df6e5dde683b4e0627
       - type: file
-        url: https://repository.springsource.com/maven/bundles/external/javax/media/jai/com.springsource.javax.media.jai.codec/1.1.3/com.springsource.javax.media.jai.codec-1.1.3.jar
-        sha1: 98a2695820bb9caaa5c47fc8cd7df3de86a338d4
-      - type: file
-        url: https://repository.springsource.com/maven/bundles/external/javax/media/jai/com.springsource.javax.media.jai.codec/1.1.3/com.springsource.javax.media.jai.codec-1.1.3.pom
-        sha1: 80b0240c8a661e586fd3601bdb8f16428666fdbd
-      - type: file
-        url: https://repository.springsource.com/maven/bundles/external/javax/media/jai/com.springsource.javax.media.jai.core/1.1.3/com.springsource.javax.media.jai.core-1.1.3.jar
-        sha1: 748b8c2584896b5d1226846ef2695a3e82291f9c
-      - type: file
-        url: https://repository.springsource.com/maven/bundles/external/javax/media/jai/com.springsource.javax.media.jai.core/1.1.3/com.springsource.javax.media.jai.core-1.1.3.pom
-        sha1: 135a40555ef29c450bf1064f7e22fadd4469b68b
-      - type: file
         url: https://repo1.maven.org/maven2/javax/xml/bind/jaxb-api-parent/2.3.1/jaxb-api-parent-2.3.1.pom
         sha1: 26101e8a1a09e16cdf277a4591f6d29917b2e06e
       - type: file
@@ -448,12 +397,6 @@ modules:
       - type: file
         url: https://repo1.maven.org/maven2/net/imagej/ij/1.53j/ij-1.53j.pom
         sha1: b6be54f415192de6c8265a9fdb70571fb58a790b
-      - type: file
-        url: https://repo1.maven.org/maven2/net/java/dev/jna/jna/3.2.7/jna-3.2.7.jar
-        sha1: 4f25aa7292f70e721a9b96a6ed49365ba6e03eab
-      - type: file
-        url: https://repo1.maven.org/maven2/net/java/dev/jna/jna/3.2.7/jna-3.2.7.pom
-        sha1: 09f2423374b72b9a3113c136c16401506e115ae9
       - type: file
         url: https://repo1.maven.org/maven2/net/java/jvnet-parent/1/jvnet-parent-1.pom
         sha1: b55a1b046dbe82acdee8edde7476eebcba1e57d8
@@ -497,6 +440,9 @@ modules:
         url: https://repo1.maven.org/maven2/org/apache/apache/18/apache-18.pom
         sha1: bd408bbea3840f2c7f914b29403e39a90f84fd5f
       - type: file
+        url: https://repo1.maven.org/maven2/org/apache/apache/19/apache-19.pom
+        sha1: db8bb0231dcbda5011926dbaca1a7ce652fd5517
+      - type: file
         url: https://repo1.maven.org/maven2/org/apache/apache/21/apache-21.pom
         sha1: 649b700a1b2b4a1d87e7ae8e3f47bfe101b2a4a5
       - type: file
@@ -508,6 +454,9 @@ modules:
       - type: file
         url: https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.pom
         sha1: 2b7f0896fc2f13bbe7b0022c85738e3b6a3f201a
+      - type: file
+        url: https://repo1.maven.org/maven2/org/apache/commons/commons-parent/34/commons-parent-34.pom
+        sha1: 1f6be162a806d8343e3cd238dd728558532473a5
       - type: file
         url: https://repo1.maven.org/maven2/org/apache/commons/commons-parent/48/commons-parent-48.pom
         sha1: 1cdeb626cf4f0cec0f171ec838a69922efc6ef95
@@ -611,6 +560,21 @@ modules:
         url: https://repo1.maven.org/maven2/org/apache/maven/skins/maven-skins/30/maven-skins-30.pom
         sha1: e91cce575059dec94c0a64a0db6932323fb9ced5
       - type: file
+        url: https://repo1.maven.org/maven2/org/apache/pdfbox/fontbox/2.0.27/fontbox-2.0.27.jar
+        sha1: d08c064d18b2b149da937d15c0d1708cba03f29d
+      - type: file
+        url: https://repo1.maven.org/maven2/org/apache/pdfbox/fontbox/2.0.27/fontbox-2.0.27.pom
+        sha1: 19b988e6c8a99918f4895be8ee088e794b144f6c
+      - type: file
+        url: https://repo1.maven.org/maven2/org/apache/pdfbox/pdfbox-parent/2.0.27/pdfbox-parent-2.0.27.pom
+        sha1: 5e604a5dc0c01a1544b384bb6b66eb02c86fa4a4
+      - type: file
+        url: https://repo1.maven.org/maven2/org/apache/pdfbox/pdfbox/2.0.27/pdfbox-2.0.27.jar
+        sha1: 416a9dfce3714116bfdf793b15368df04266845f
+      - type: file
+        url: https://repo1.maven.org/maven2/org/apache/pdfbox/pdfbox/2.0.27/pdfbox-2.0.27.pom
+        sha1: 6d141e7f27d2c043877ce4b21b54b41c0b35f797
+      - type: file
         url: https://repo1.maven.org/maven2/org/audiveris/proxymusic/4.0.2/proxymusic-4.0.2.jar
         sha1: 7a747a5b8d1e738e74abf883d9c23b0b18f0bf22
       - type: file
@@ -623,32 +587,32 @@ modules:
         url: https://repo1.maven.org/maven2/org/bushe/eventbus/1.4/eventbus-1.4.pom
         sha1: 94441079b581c27511b3341eefa0cc95dfa5200a
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp-presets/1.5.6/javacpp-presets-1.5.6.pom
-        sha1: b8562e1c47078d16fa55cca36470f76c0aaebbe5
+        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp-presets/1.5.9/javacpp-presets-1.5.9.pom
+        sha1: a0d0fa786335540f3d7b3a872dc703a3e94d1f9d
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.6/javacpp-1.5.6.jar
-        sha1: 1f18a820aadd943577b0b372554f9e35e1232e25
+        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.9/javacpp-1.5.9.jar
+        sha1: bee92b783ea619381df7577527f8739f778cf2f6
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.6/javacpp-1.5.6.pom
-        sha1: 4ff5a8eaa73d9e8e6c1898efbfa42854a4a36547
+        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.9/javacpp-1.5.9.pom
+        sha1: 2b3589e991cadf80be45720d3504ebfe691872cd
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.81.1-1.5.6/leptonica-1.81.1-1.5.6-linux-x86_64.jar
-        sha1: 50ee2a7e723650466294a9d2d6d08ba4444500dd
+        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9-linux-x86_64.jar
+        sha1: 70daac8504000ed30e590572b026eb6bd3e9a35a
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.81.1-1.5.6/leptonica-1.81.1-1.5.6.jar
-        sha1: ddac2f53d3218c349b5bff8ac5ad30a10e30ffc5
+        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9.jar
+        sha1: 60091a4a7700fa91e996e86fe589eebbadab96d8
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.81.1-1.5.6/leptonica-1.81.1-1.5.6.pom
-        sha1: 66f72d7afbecb7ee801a809831afb4b992c05074
+        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9.pom
+        sha1: 36cb477cb44ea062f560acf20ff53aef9f2ee01d
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/4.1.1-1.5.6/tesseract-4.1.1-1.5.6-linux-x86_64.jar
-        sha1: 98974bd9e59b83a76a00ef7fd9b671dc375bd4b7
+        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9-linux-x86_64.jar
+        sha1: ecf57ef5f139560ac5ffe1fddc77c7e4f962d904
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/4.1.1-1.5.6/tesseract-4.1.1-1.5.6.jar
-        sha1: de0e5815417e5eb47cf5468bbdc552281a5e5877
+        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9.jar
+        sha1: d51335e63cb91cda213bf70d0ec49f7bf3bb1197
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/4.1.1-1.5.6/tesseract-4.1.1-1.5.6.pom
-        sha1: 38a69832706edf59836a98aed2711e383845ff50
+        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9.pom
+        sha1: 45fb19b331ad0ae717d0857631ad0ce7d94b5dda
       - type: file
         url: https://repo1.maven.org/maven2/org/codehaus/mojo/jaxb2-maven-plugin/2.5.0/jaxb2-maven-plugin-2.5.0.jar
         sha1: aab18cbe474c08919d7e493407074c28dcc091dd
