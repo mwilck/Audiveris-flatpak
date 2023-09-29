@@ -12,6 +12,7 @@ get_languages() {
     mapfile -t LANG \
 	< <(curl -s "$TESSDATA/git/trees/$TAG" | \
 		jq -r '.tree[] | select (.path|endswith(".traineddata")) |  [ .path,.sha | rtrimstr(".traineddata") ] | join(":")')
+    mapfile -t CURR < <(sed -nE '/url:|path:/s,.*/([a-z_]+)\.traineddata,\1,p' lang_sources.yml)
 }
 
 print_languages() {
@@ -25,6 +26,14 @@ print_languages() {
 	fi
     done
     printf "\n"
+    echo "=== Currently configured languages ==="
+    for i in "${!CURR[@]}"; do
+	if [[ $((i % 5)) == 4 ]]; then
+	    printf "$i: ${CURR[$i]%:*}\n"
+	else
+	    printf "$i: ${CURR[$i]%:*}\t\t"
+	fi
+    done
 }
 
 interactive() {
