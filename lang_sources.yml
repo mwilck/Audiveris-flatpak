@@ -13,3 +13,6 @@
       - type: file
         url: https://github.com/tesseract-ocr/tessdata/raw/4.1.0/deu_frak.traineddata
         sha1: de986866ea505476e6b61e93ae5fb1c6ac1b4a09
+      - type: file
+        url: https://github.com/tesseract-ocr/tessdata/raw/4.1.0/lat.traineddata
+        sha1: 21e97b6104f18ad43a20d032dce3e1346582d648
