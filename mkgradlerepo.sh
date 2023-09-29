@@ -361,24 +361,24 @@ mkdir -p dependencies/org/bushe/eventbus/1.4
 ln -f eventbus-1.4.jar dependencies/org/bushe/eventbus/1.4/eventbus-1.4.jar
 mkdir -p dependencies/org/bushe/eventbus/1.4
 ln -f eventbus-1.4.pom dependencies/org/bushe/eventbus/1.4/eventbus-1.4.pom
-mkdir -p dependencies/org/bytedeco/javacpp-presets/1.5.6
-ln -f javacpp-presets-1.5.6.pom dependencies/org/bytedeco/javacpp-presets/1.5.6/javacpp-presets-1.5.6.pom
-mkdir -p dependencies/org/bytedeco/javacpp/1.5.6
-ln -f javacpp-1.5.6.jar dependencies/org/bytedeco/javacpp/1.5.6/javacpp-1.5.6.jar
-mkdir -p dependencies/org/bytedeco/javacpp/1.5.6
-ln -f javacpp-1.5.6.pom dependencies/org/bytedeco/javacpp/1.5.6/javacpp-1.5.6.pom
-mkdir -p dependencies/org/bytedeco/leptonica/1.81.1-1.5.6
-ln -f leptonica-1.81.1-1.5.6-linux-x86_64.jar dependencies/org/bytedeco/leptonica/1.81.1-1.5.6/leptonica-1.81.1-1.5.6-linux-x86_64.jar
-mkdir -p dependencies/org/bytedeco/leptonica/1.81.1-1.5.6
-ln -f leptonica-1.81.1-1.5.6.jar dependencies/org/bytedeco/leptonica/1.81.1-1.5.6/leptonica-1.81.1-1.5.6.jar
-mkdir -p dependencies/org/bytedeco/leptonica/1.81.1-1.5.6
-ln -f leptonica-1.81.1-1.5.6.pom dependencies/org/bytedeco/leptonica/1.81.1-1.5.6/leptonica-1.81.1-1.5.6.pom
-mkdir -p dependencies/org/bytedeco/tesseract/4.1.1-1.5.6
-ln -f tesseract-4.1.1-1.5.6-linux-x86_64.jar dependencies/org/bytedeco/tesseract/4.1.1-1.5.6/tesseract-4.1.1-1.5.6-linux-x86_64.jar
-mkdir -p dependencies/org/bytedeco/tesseract/4.1.1-1.5.6
-ln -f tesseract-4.1.1-1.5.6.jar dependencies/org/bytedeco/tesseract/4.1.1-1.5.6/tesseract-4.1.1-1.5.6.jar
-mkdir -p dependencies/org/bytedeco/tesseract/4.1.1-1.5.6
-ln -f tesseract-4.1.1-1.5.6.pom dependencies/org/bytedeco/tesseract/4.1.1-1.5.6/tesseract-4.1.1-1.5.6.pom
+mkdir -p dependencies/org/bytedeco/javacpp-presets/1.5.9
+ln -f javacpp-presets-1.5.9.pom dependencies/org/bytedeco/javacpp-presets/1.5.9/javacpp-presets-1.5.9.pom
+mkdir -p dependencies/org/bytedeco/javacpp/1.5.9
+ln -f javacpp-1.5.9.jar dependencies/org/bytedeco/javacpp/1.5.9/javacpp-1.5.9.jar
+mkdir -p dependencies/org/bytedeco/javacpp/1.5.9
+ln -f javacpp-1.5.9.pom dependencies/org/bytedeco/javacpp/1.5.9/javacpp-1.5.9.pom
+mkdir -p dependencies/org/bytedeco/leptonica/1.83.0-1.5.9
+ln -f leptonica-1.83.0-1.5.9-linux-x86_64.jar dependencies/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9-linux-x86_64.jar
+mkdir -p dependencies/org/bytedeco/leptonica/1.83.0-1.5.9
+ln -f leptonica-1.83.0-1.5.9.jar dependencies/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9.jar
+mkdir -p dependencies/org/bytedeco/leptonica/1.83.0-1.5.9
+ln -f leptonica-1.83.0-1.5.9.pom dependencies/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9.pom
+mkdir -p dependencies/org/bytedeco/tesseract/5.3.1-1.5.9
+ln -f tesseract-5.3.1-1.5.9-linux-x86_64.jar dependencies/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9-linux-x86_64.jar
+mkdir -p dependencies/org/bytedeco/tesseract/5.3.1-1.5.9
+ln -f tesseract-5.3.1-1.5.9.jar dependencies/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9.jar
+mkdir -p dependencies/org/bytedeco/tesseract/5.3.1-1.5.9
+ln -f tesseract-5.3.1-1.5.9.pom dependencies/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9.pom
 mkdir -p dependencies/org/codehaus/mojo/jaxb2-maven-plugin/2.5.0
 ln -f jaxb2-maven-plugin-2.5.0.jar dependencies/org/codehaus/mojo/jaxb2-maven-plugin/2.5.0/jaxb2-maven-plugin-2.5.0.jar
 mkdir -p dependencies/org/codehaus/mojo/jaxb2-maven-plugin/2.5.0

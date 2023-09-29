@@ -47,7 +47,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Audiveris/audiveris
-        branch: development
+        branch: 5.3.1
       - type: file
         url: https://services.gradle.org/distributions/gradle-7.3-all.zip
         sha256: 00b273629df4ce46e68df232161d5a7c4e495b9a029ce6e0420f071e21316867
@@ -79,6 +79,9 @@ modules:
       - type: file
         url: https://github.com/tesseract-ocr/tessdata/raw/4.1.0/deu_frak.traineddata
         sha1: de986866ea505476e6b61e93ae5fb1c6ac1b4a09
+      - type: file
+        url: https://github.com/tesseract-ocr/tessdata/raw/4.1.0/lat.traineddata
+        sha1: 21e97b6104f18ad43a20d032dce3e1346582d648
       - type: file
         url: https://repo1.maven.org/maven2/args4j/args4j-site/2.33/args4j-site-2.33.pom
         sha1: 09ba12fde00306694af3ce9f5ff302c858345edf
@@ -623,32 +626,32 @@ modules:
         url: https://repo1.maven.org/maven2/org/bushe/eventbus/1.4/eventbus-1.4.pom
         sha1: 94441079b581c27511b3341eefa0cc95dfa5200a
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp-presets/1.5.6/javacpp-presets-1.5.6.pom
-        sha1: b8562e1c47078d16fa55cca36470f76c0aaebbe5
+        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp-presets/1.5.9/javacpp-presets-1.5.9.pom
+        sha1: a0d0fa786335540f3d7b3a872dc703a3e94d1f9d
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.6/javacpp-1.5.6.jar
-        sha1: 1f18a820aadd943577b0b372554f9e35e1232e25
+        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.9/javacpp-1.5.9.jar
+        sha1: bee92b783ea619381df7577527f8739f778cf2f6
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.6/javacpp-1.5.6.pom
-        sha1: 4ff5a8eaa73d9e8e6c1898efbfa42854a4a36547
+        url: https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.9/javacpp-1.5.9.pom
+        sha1: 2b3589e991cadf80be45720d3504ebfe691872cd
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.81.1-1.5.6/leptonica-1.81.1-1.5.6-linux-x86_64.jar
-        sha1: 50ee2a7e723650466294a9d2d6d08ba4444500dd
+        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9-linux-x86_64.jar
+        sha1: 70daac8504000ed30e590572b026eb6bd3e9a35a
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.81.1-1.5.6/leptonica-1.81.1-1.5.6.jar
-        sha1: ddac2f53d3218c349b5bff8ac5ad30a10e30ffc5
+        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9.jar
+        sha1: 60091a4a7700fa91e996e86fe589eebbadab96d8
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.81.1-1.5.6/leptonica-1.81.1-1.5.6.pom
-        sha1: 66f72d7afbecb7ee801a809831afb4b992c05074
+        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9.pom
+        sha1: 36cb477cb44ea062f560acf20ff53aef9f2ee01d
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/4.1.1-1.5.6/tesseract-4.1.1-1.5.6-linux-x86_64.jar
-        sha1: 98974bd9e59b83a76a00ef7fd9b671dc375bd4b7
+        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9-linux-x86_64.jar
+        sha1: ecf57ef5f139560ac5ffe1fddc77c7e4f962d904
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/4.1.1-1.5.6/tesseract-4.1.1-1.5.6.jar
-        sha1: de0e5815417e5eb47cf5468bbdc552281a5e5877
+        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9.jar
+        sha1: d51335e63cb91cda213bf70d0ec49f7bf3bb1197
       - type: file
-        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/4.1.1-1.5.6/tesseract-4.1.1-1.5.6.pom
-        sha1: 38a69832706edf59836a98aed2711e383845ff50
+        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9.pom
+        sha1: 45fb19b331ad0ae717d0857631ad0ce7d94b5dda
       - type: file
         url: https://repo1.maven.org/maven2/org/codehaus/mojo/jaxb2-maven-plugin/2.5.0/jaxb2-maven-plugin-2.5.0.jar
         sha1: aab18cbe474c08919d7e493407074c28dcc091dd

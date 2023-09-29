@@ -46,24 +46,43 @@
   <launchable type="desktop-id">org.audiveris.audiveris.desktop</launchable>
   <developer_name>Hervé Bitteur et al.</developer_name>
   <releases>
-    <release version="5.3.0" date="2022-04-22" urgency="low"
-	     type="development">
+    <release version="5.3.1" date="2023-07-04" urgency="low"
+	     type="stable">
       <description>
 	<p>
-	  This is the 5.3.0 development version of Audiveris.
+	  Drums, Fonts and Parts (bis).
+	  This release had to be quickly published to fix a bug on small void
+	  head templates in 5.3.0 release.
+	  Setting the "Small Heads" processing switch led to lots of false
+	  positives
+	  during HEADS step, due to corrupted templates built for small void heads.
+	</p>
+      </description>
+    </release>
+    <release version="5.3.0" date="2023-06-28" urgency="low"
+	     type="stable">
+      <description>
+	<p>
+	  Drums, Fonts and Parts. Major features:
 	</p>
 	<ul>
 	  <li>
-	    Bug fixes
+	    Long-awaited support of drums unpitched notation
 	  </li>
 	  <li>
-	    Migration from Tesseract 3 to Tesseract 4
+	    Support for various music and text font families
 	  </li>
 	  <li>
-	    Migration to MusicXML 4.0
+	    User management of logical parts
 	  </li>
 	  <li>
-	    Generation of Schemas Documentation
+	    User edition of staff geometry
+	  </li>
+	  <li>
+	    Support for multi-measure rests, measure repeats, octave shifts, fingering, plucking, etc.
+	  </li>
+	  <li>
+	    Use of Java 17, Tesseract 5.x, MusicXML 4.0
 	  </li>
 	</ul>
       </description>
