@@ -13,8 +13,6 @@ finish-args:
   # X11 + XShm access
   - --share=ipc
   - --socket=x11
-  # Wayland access
-  - --socket=wayland
   # Needs to save files locally
   - --filesystem=xdg-documents
   - --filesystem=xdg-pictures
