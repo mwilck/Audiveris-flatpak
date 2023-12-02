@@ -81,21 +81,37 @@ def main(subdir):
     subprocess.call(["./gradlew", "--info", "-g", temp_home, "build"])
     os.chdir(project_dir)
 
+    # Dir layout of file created by gradle: e.g.
+    # ${GRADLE_TEMP}/caches/modules-2/files-2.1/org.audiveris/proxymusic/4.0.2/7a747a5b8d1e738e74abf883d9c23b0b18f0bf22/proxymusic-4.0.2.jar
+
+    # Target dir layout:
+    # dependencies/org/audiveris/proxymusic/4.0.2
+
+    # cache_files = ${GRADLE_TEMP}/caches/modules-*/files-*/
     cache_files = os.path.join(temp_home, "caches", "modules-*", "files-*")
     for cache_dir in glob.glob(cache_files):
+        # cache_dir = ${GRADLE_TEMP}/caches/modules-2/files-2.1/
         for cache_group_id in os.listdir(cache_dir):
+            # cache group_id is the "vendor", e.g. "org.audiveris"
             cache_group_dir = os.path.join(cache_dir, cache_group_id)
+            # repo_group_dir changes this to maven format
+            # repo_group_dir = "dependencies/org/audiveris"
             repo_group_dir = os.path.join(repo_dir, cache_group_id.replace('.', '/'))
             for cache_artifact_id in os.listdir(cache_group_dir):
+                # cache_artifact_id = "proxymusic"
                 cache_artifact_dir = os.path.join(cache_group_dir, cache_artifact_id)
                 repo_artifact_dir = os.path.join(repo_group_dir, cache_artifact_id)
                 for cache_version_id in os.listdir(cache_artifact_dir):
+                    # cache_version_id = "4.0.2"
                     cache_version_dir = os.path.join(cache_artifact_dir, cache_version_id)
                     repo_version_dir = os.path.join(repo_artifact_dir, cache_version_id)
                     if not os.path.isdir(repo_version_dir):
                         os.makedirs(repo_version_dir)
+                    # the first glob is for the SHA1, the 2nd for the file name
                     cache_items = os.path.join(cache_version_dir, "*/*")
                     for cache_item in glob.glob(cache_items):
+                        # cache_item = ".../4.0.2/7a747a5b8d1e738e74abf883d9c23b0b18f0bf22/proxymusic-4.0.2.jar"
+                        # cache_item_name = "proxymusic-4.0.2.jar"
                         cache_item_name = os.path.basename(cache_item)
                         artifacts.append(Artifact(cache_group_id, cache_artifact_id,
                                                   cache_version_id, cache_item_name,
