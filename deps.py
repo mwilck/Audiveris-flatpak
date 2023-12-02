@@ -103,14 +103,8 @@ def main(subdir):
 
     artifacts.sort()
 
-    with open(APP_ID + ".yml.in", "r") as input:
-        yml = input.read().rstrip()
-    with open("lang_sources.yml", "r") as input:
-        langs = input.read().rstrip()
-    with open(APP_ID + ".yml", "w") as output:
+    with open("dependencies.yml", "w") as output:
         output.write(f"""
-{yml}
-{langs}
 {"".join([a.yml() for a in artifacts])}
 """)
     with open("mkgradlerepo.sh", "w") as out:
