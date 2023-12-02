@@ -342,11 +342,15 @@ ln -f javacpp-1.5.9.jar dependencies/org/bytedeco/javacpp/1.5.9/javacpp-1.5.9.ja
 mkdir -p dependencies/org/bytedeco/javacpp/1.5.9
 ln -f javacpp-1.5.9.pom dependencies/org/bytedeco/javacpp/1.5.9/javacpp-1.5.9.pom
 mkdir -p dependencies/org/bytedeco/leptonica/1.83.0-1.5.9
+ln -f leptonica-1.83.0-1.5.9-linux-arm64.jar dependencies/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9-linux-arm64.jar
+mkdir -p dependencies/org/bytedeco/leptonica/1.83.0-1.5.9
 ln -f leptonica-1.83.0-1.5.9-linux-x86_64.jar dependencies/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9-linux-x86_64.jar
 mkdir -p dependencies/org/bytedeco/leptonica/1.83.0-1.5.9
 ln -f leptonica-1.83.0-1.5.9.jar dependencies/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9.jar
 mkdir -p dependencies/org/bytedeco/leptonica/1.83.0-1.5.9
 ln -f leptonica-1.83.0-1.5.9.pom dependencies/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9.pom
+mkdir -p dependencies/org/bytedeco/tesseract/5.3.1-1.5.9
+ln -f tesseract-5.3.1-1.5.9-linux-arm64.jar dependencies/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9-linux-arm64.jar
 mkdir -p dependencies/org/bytedeco/tesseract/5.3.1-1.5.9
 ln -f tesseract-5.3.1-1.5.9-linux-x86_64.jar dependencies/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9-linux-x86_64.jar
 mkdir -p dependencies/org/bytedeco/tesseract/5.3.1-1.5.9

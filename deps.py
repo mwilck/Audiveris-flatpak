@@ -8,8 +8,11 @@ import shutil
 import subprocess
 import sys
 from functools import total_ordering
+from urllib import request, error as urlerror
+from hashlib import sha1
 
 APP_ID = "org.audiveris.audiveris"
+project_dir = os.path.dirname(os.path.realpath(__file__))
 
 @total_ordering
 class Artifact:
@@ -62,16 +65,14 @@ ln -f {self.item_name} {"/".join([dir, self.item_name])}
         return (self.path(), self.sha1) < (other.path(), other.sha1)
 
 
-def main(subdir):
+def main(build_dir):
     artifacts = []
-    project_dir = os.path.dirname(os.path.realpath(__file__))
     flat_dir = os.path.join(project_dir, "deps")
     if not os.path.isdir(flat_dir):
         os.makedirs(flat_dir)
     repo_dir = os.path.join(project_dir, "dependencies")
     if not os.path.isdir(repo_dir):
         os.makedirs(repo_dir)
-    build_dir = os.path.join(project_dir, subdir)
     temp_home = os.path.join(build_dir, ".gradle_temp")
     if not os.path.isdir(build_dir):
         raise RuntimeError(f"{build_dir} does not exist")
@@ -113,9 +114,27 @@ def main(subdir):
                         # cache_item = ".../4.0.2/7a747a5b8d1e738e74abf883d9c23b0b18f0bf22/proxymusic-4.0.2.jar"
                         # cache_item_name = "proxymusic-4.0.2.jar"
                         cache_item_name = os.path.basename(cache_item)
-                        artifacts.append(Artifact(cache_group_id, cache_artifact_id,
-                                                  cache_version_id, cache_item_name,
-                                                  os.path.basename(os.path.dirname(cache_item))))
+                        artifact = Artifact(cache_group_id, cache_artifact_id,
+                                            cache_version_id, cache_item_name,
+                                            os.path.basename(os.path.dirname(cache_item)))
+                        artifacts.append(artifact)
+                        if cache_item_name.endswith("-linux-x86_64.jar"):
+                            url = artifact.url().replace("-linux-x86_64.jar", "-linux-arm64.jar.sha1")
+                            try:
+                                conn = request.urlopen(url)
+                                sha1 = conn.read()
+                            except urlerror.HTTPError:
+                                print(f"ERROR opening '{url}': {sys.exc_info()[1]}")
+                            else:
+                                if len(sha1) == 40:
+                                    arm = Artifact(cache_group_id, cache_artifact_id,
+                                                   cache_version_id,
+                                                   cache_item_name.replace("-linux-x86_64.jar", "-linux-arm64.jar"),
+                                                   sha1.decode("utf-8"))
+                                    artifacts.append(arm)
+                                    print(f"Added sha1 for {url}: {sha1.decode('utf-8')}")
+                                else:
+                                    print(f"ERROR: invalid sha1 for {url}: {sha1.decode('utf-8')}")
 
     artifacts.sort()
 
@@ -142,4 +161,5 @@ if __name__ == "__main__":
         dir=sys.argv[1]
     else:
         dir=".flatpak-builder/build/dummy"
+        dir = os.path.join(project_dir, dir)
     main(dir)

@@ -513,6 +513,9 @@
         url: https://repo1.maven.org/maven2/org/bytedeco/javacpp/1.5.9/javacpp-1.5.9.pom
         sha1: 2b3589e991cadf80be45720d3504ebfe691872cd
       - type: file
+        url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9-linux-arm64.jar
+        sha1: c22fbc822b181b3a00390fe76558ffe8eec46f4c
+      - type: file
         url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9-linux-x86_64.jar
         sha1: 70daac8504000ed30e590572b026eb6bd3e9a35a
       - type: file
@@ -521,6 +524,9 @@
       - type: file
         url: https://repo1.maven.org/maven2/org/bytedeco/leptonica/1.83.0-1.5.9/leptonica-1.83.0-1.5.9.pom
         sha1: 36cb477cb44ea062f560acf20ff53aef9f2ee01d
+      - type: file
+        url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9-linux-arm64.jar
+        sha1: 90226201aaaadd3de0dd22f07729cf883e209aa5
       - type: file
         url: https://repo1.maven.org/maven2/org/bytedeco/tesseract/5.3.1-1.5.9/tesseract-5.3.1-1.5.9-linux-x86_64.jar
         sha1: ecf57ef5f139560ac5ffe1fddc77c7e4f962d904
